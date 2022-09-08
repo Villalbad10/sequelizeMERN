@@ -17,16 +17,11 @@ export async function getPersons(req, res) {
 export async function createPerson(req, res) {
   const { name, phone, email } = req.body;
   try {
-    let newPerson = await Person.create(
-      {
-        name,
-        phone,
-        email,
-      },
-      {
-        fields: ["name", "phone", "email"],
-      }
-    );
+    const newPerson = await Person.create({
+      name,
+      phone,
+      email,
+    });
     return res.json(newPerson);
   } catch (error) {
     res.status(500).json({

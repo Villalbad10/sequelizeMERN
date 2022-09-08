@@ -30,13 +30,7 @@ export async function getAddresss(req, res) {
 
 export async function updateAddress(req, res) {
   const { id } = req.params;
-  // const { projectid, name, done } = req.body;
   try {
-    // const updatedAddress = await Address.update(
-    //   { name, done, projectid },
-    //   { where: { id } }
-    // );
-
     const address = await Address.findOne({
       attributes: ["street", "projectId", "city", "postal", "country"],
       where: { id },

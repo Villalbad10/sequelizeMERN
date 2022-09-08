@@ -64,7 +64,7 @@ const Home = () => {
       <ToastContainer />
       <Agregar />
 
-      <section className="d-flex justify-content-center flex-wrap mt-4">
+      <section className="d-flex justify-content-around flex-wrap mt-4">
         {data.map(({ id, name, phone, email }) => (
           <Card
             className="me-4 mt-4 targeta"
